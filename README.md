@@ -22,6 +22,11 @@ To start development execute:
 and edit `client.js` or `server.js` in your favourite text editor or IDE. Code
 will be automatically rebuilt after you made some changes.
 
+If you encounter `EMFILE` error you can workaround it by raising the number of
+file descriptors allowed to be open:
+
+    % ulimit -n 10000
+
 The code size when minified and gzipped is pretty small:
 
     % NODE_ENV=production browserify -r ./client.js:./app -t reactify \
