@@ -9,6 +9,7 @@ var React             = require('react');
 var createController  = require('react-app-controller');
 
 var MainPage = React.createClass({
+
   render: function() {
     return (
       <div className="MainPage">
@@ -21,6 +22,9 @@ var MainPage = React.createClass({
 });
 
 var AboutPage = React.createClass({
+
+  // This function will be called before mounting Page in the document, you can
+  // do XHR from here to provide some data to a page.
   fetchData: function(request, cb) {
     cb(null, {message: 'hello'});
   },
@@ -38,6 +42,7 @@ var AboutPage = React.createClass({
 });
 
 var UserPage = React.createClass({
+
   render: function() {
     return (
       <div className="UserPage">
@@ -50,6 +55,8 @@ var UserPage = React.createClass({
 });
 
 module.exports = createController({
+
+  // provide route table, route syntax is similar to express
   routes: {
     '/': MainPage,
     '/about': AboutPage,
@@ -63,10 +70,12 @@ module.exports = createController({
     }
   },
 
+  // application started
   componentDidMount: function() {
     window.addEventListener('click', this.onClick);
   },
 
+  // application will shutdown
   componentWillUnmount: function() {
     window.removeEventListener('click', this.onClick);
   }

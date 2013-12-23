@@ -1,9 +1,9 @@
-# Quickstart template for React + Express + Browserify
+# Another project template for React
 
 This is the minimal project template to get started with
 [react-app-controller][1] and [react-app-middleware][2] which provides
-*server-side rendering* and *CommonJS modules in a browser* (via
-[browserify][4]) while using [express][3] server-side.
+*server-side rendering*, *CommonJS modules in a browser* (via [browserify][4])
+and routing via *History API*  while using [express][3] server-side.
 
 Project structure is the following:
 
