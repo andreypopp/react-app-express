@@ -22,6 +22,16 @@ To start development execute:
 and edit `client.js` or `server.js` in your favourite text editor or IDE. Code
 will be automatically rebuilt after you made some changes.
 
+The code size when minified and gzipped is pretty small:
+
+    % NODE_ENV=production browserify -r ./client.js:./app -t reactify \
+      | uglifyjs -cm \
+      | gzip \
+      | wc -c
+    29270
+
+It's slightly more than 29KB.
+
 [1]: https://github.com/andreypopp/react-app-controller
 [2]: https://github.com/andreypopp/react-app-middleware
 [3]: http://expressjs.com
