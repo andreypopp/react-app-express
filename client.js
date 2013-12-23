@@ -12,6 +12,8 @@ var MainPage = React.createClass({
 
   render: function() {
     return (
+      // you can use JSX, but if you prefer not to do that just look at the next
+      // page component
       <div className="MainPage">
         <h1>MainPage</h1>
         <a href="/about">about</a>
@@ -30,13 +32,12 @@ var AboutPage = React.createClass({
   },
 
   render: function() {
-    return (
-      <div className="AboutPage">
-        <h1>AboutPage</h1>
-        <p>{this.props.request.data.message}</p>
-        <a href="/">main</a>
-        <a href="/user/john">John's page</a>
-      </div>
+    // this component doesn't use JSX so you have different options
+    return React.DOM.div({className: 'AboutPage'},
+      React.DOM.h1(null, 'AboutPage'),
+      React.DOM.p(null, this.props.request.data.message),
+      React.DOM.a({href: '/'}, 'main'),
+      React.DOM.a({href: '/user/john'}, 'John\'s page')
     );
   }
 });
