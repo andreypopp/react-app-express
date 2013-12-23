@@ -1,0 +1,24 @@
+{
+  "name": "react-app-express",
+  "version": "0.0.0",
+  "description": "React + Express + Browserify project template w/ server rendering",
+  "main": "server.js",
+  "dependencies": {
+    "react-app-middleware": "~0.3.0",
+    "express": "~3.4.7"
+  },
+  "devDependencies": {
+    "react": "~0.8.0",
+    "react-app-controller": "~0.4.0",
+    "connect-browserify": "~1.0.0",
+    "browserify": "~3.14.0",
+    "reactify": "~0.5.0",
+    "envify": "~0.2.0"
+  },
+  "scripts": {
+    "start": "node ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "You",
+  "license": "MIT"
+}
