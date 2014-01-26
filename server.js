@@ -33,6 +33,11 @@ app.get('/assets/bundle.js', serveJS(createBundler(), {
   watch: opts.watch
 }));
 
+// some API to get started with
+app.get('/api', function(req, res) {
+  res.send({message: 'Hello'});
+});
+
 // server pre-rendered UI
 app.use(ui.serveRenderedPage(createBundler(), {
   // populate <head>

@@ -5,6 +5,8 @@ This is the minimal project template to get started with
 *server-side rendering*, *CommonJS modules in a browser* (via [browserify][4])
 and routing via *History API*  while using [express][3] server-side.
 
+## Project structure
+
 Project structure is the following:
 
     ├── README.md
@@ -14,6 +16,8 @@ Project structure is the following:
 
 Files `client.js` and `server.js` contain client and server code
 correspondingly.
+
+## Quickstart
 
 To install dependencies:
 
@@ -30,6 +34,14 @@ If you encounter `EMFILE` error you can workaround it by raising the number of
 file descriptors allowed to be open:
 
     % ulimit -n 10000
+
+## Doing XHR
+
+You can XHR both on client and server (this package uses `xhr2` node module to
+polyfill XHR API in Node.js). You can see how `AboutPage` defines `fetchPage`
+method for prefetching needed data.
+
+## Code size
 
 The code size when minified and gzipped is pretty small:
 

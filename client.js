@@ -28,7 +28,13 @@ var AboutPage = React.createClass({
   // This function will be called before mounting Page in the document, you can
   // do XHR from here to provide some data to a page.
   fetchData: function(request, cb) {
-    cb(null, {message: 'hello'});
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+      var data = JSON.parse(xhr.responseText);
+      cb(null, data);
+    };
+    xhr.open("get", "/api", true);
+    xhr.send();
   },
 
   render: function() {
