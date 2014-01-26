@@ -8,7 +8,7 @@
 var express     = require('express');
 var browserify  = require('browserify');
 var reactify    = require('reactify');
-var ui          = require('react-app-middleware');
+var servePage   = require('react-app-middleware');
 var serveJS     = require('connect-browserify');
 
 var opts = {
@@ -39,12 +39,7 @@ app.get('/api', function(req, res) {
 });
 
 // server pre-rendered UI
-app.use(ui.serveRenderedPage(createBundler(), {
-  // populate <head>
-  meta: [{charset: 'utf8'}],
-  script: [{src: '/assets/bundle.js'}],
-  link: [{href: '/assets/styles.css', rel: 'stylesheet'}],
-
+app.use(servePage(createBundler(), {
   debug: opts.debug,
   watch: opts.watch
 }));

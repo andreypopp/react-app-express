@@ -70,6 +70,20 @@ module.exports = createController({
     '/user/:username': UserPage
   },
 
+  render: function() {
+    return (
+      <html>
+        <head>
+          <script src="/assets/bundle.js"></script>
+        </head>
+        <body>
+          <h1>Some common markup</h1>
+          {this.state.page}
+        </body>
+      </html>
+    );
+  },
+
   onClick: function(e) {
     if (e.target.tagName === 'A' && e.target.attributes.href) {
       e.preventDefault();
