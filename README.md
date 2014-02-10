@@ -1,5 +1,8 @@
 # Another project template for React
 
+**DEPRECATION WARNING:** This is not maintained anymore, please use
+[react-quickstart](https://github.com/andreypopp/react-quickstart) instead.
+
 This is the minimal project template to get started with
 [react-app-controller][1] and [react-app-middleware][2] which provides
 *server-side rendering*, *CommonJS modules in a browser* (via [browserify][4])
